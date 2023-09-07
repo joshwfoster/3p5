@@ -3,7 +3,7 @@
 
 source source_dirs.sh
 
-filename=$cdirs/../data/CDFS_obsIDs_VF.txt
+filename=$cdirs/../data/CDFS_obsIDs.txt
 
 while IFS= read -r line || [ -n "$line" ];
 do

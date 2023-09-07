@@ -20,7 +20,7 @@ save_dir = results.save_dir
 
 
 
-file = open(list_dir + 'CDFS_obsIDs_VF.txt')
+file = open(list_dir + 'CDFS_obsIDs.txt')
 
 obsID = []
 
@@ -62,7 +62,7 @@ for i in range(len(obsID_FP)):
         expt = spec[0].header['exposure']
         count_rate = spec[1].data['count_rate']
         
-    with fits.open(LD_dir + obsID_FP[i] + '/spec/nomask_bkg.pi') as spec:
+    with fits.open(LD_dir + obsID_FP[i] + '/bkg/bkg_spec.pi') as spec:
         bkg_rate = spec[1].data['count_rate']
         bkg_cts = spec[1].data['counts']
         tot_bkg_expt += spec[1].header['exposure']
@@ -96,7 +96,7 @@ cxb_data = tot_cts - PIB_data
 cxb_err = np.sqrt(tot_cts + PIB_err**2)
 
 
-save_dir = '/clusterfs/heptheory/yujinp/3p5_analysis/4p1_DeepField/data/'
+
 
 archive = h5py.File(save_dir + 'cdfs_total.h5', 'w')
 archive.create_dataset('cin_min', data=cin_min)
@@ -156,7 +156,7 @@ for i in range(len(obsID_FP)):
         expt = spec[0].header['exposure']
         count_rate = spec[1].data['count_rate']
         
-    with fits.open(LD_dir + obsID_FP[i] + '/spec/nomask_bkg.pi') as spec:
+    with fits.open(LD_dir + obsID_FP[i] + '/bkg/bkg_spec.pi') as spec:
         bkg_rate = spec[1].data['count_rate']
         bkg_cts = spec[1].data['counts']
         tot_bkg_expt += spec[1].header['exposure']

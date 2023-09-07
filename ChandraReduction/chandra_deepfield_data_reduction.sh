@@ -142,10 +142,15 @@ ls $caldb_dir/data/chandra/acis/bkgrnd/*bgstow_* >> bkg/bkg_list.lis
 dmmerge @bkg/bkg_list.lis bkg/all_bkg.fits
 dmcopy "bkg/all_bkg.fits[status=0]" bkg/bkg_cleaned.fits
 
+gainfile=$(dmkeypar repro/filtered_events.fits GAINFILE echo+)
 
-reproject_events infile="bkg/bkg_cleaned.fits[cols -time]" outfile=bkg/bkg_cleaned_reproj.fits aspect=repro/$asolfile match=repro/filtered_events.fits random=0
 
-dmextract "bkg/bkg_cleaned_reproj.fits[sky=region(temp/nomask_acis-i_sky.fits)][bin PI]" bkg/bkg_spec.pi
+acis_process_events infile=bkg/bkg_cleaned.fits outfile=bkg/bkg_newgain.fits acaofffile=NONE stop="none" doevtgrade=no apply_cti=yes apply_tgain=no calculate_pi=yes pix_adj=NONE gainfile=$caldb_dir/data/chandra/acis/det_gain/$gainfile eventdef="{s:ccd_id,s:node_id,i:expno,s:chip,s:tdet,f:det,f:sky,s:phas,l:pha,l:pha_ro,f:energy,l:pi,s:fltgrade,s:grade,x:status}"
+
+
+reproject_events infile="bkg/bkg_newgain.fits[cols -time]" outfile=bkg/bkg_newgain_reproj.fits aspect=repro/$asolfile match=repro/filtered_events.fits random=0
+
+dmextract "bkg/bkg_newgain_reproj.fits[sky=region(temp/nomask_acis-i_sky.fits)][bin PI]" bkg/bkg_spec.pi
 
 
 punlearn ardlib
