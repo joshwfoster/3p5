@@ -17,7 +17,7 @@ That work re-analyzed six datasets previously suggested to show evidence for the
 
 The XMM-Newton data reduction code is a combination of bash and Python. The code requires installation of the [XMM-SAS](https://xmm-tools.cosmos.esa.int/external/xmm_user_support/documentation/sas_usg/USG/), [HEADAS](https://heasarc.nasa.gov/lheasoft/), and [CIAO](https://cxc.cfa.harvard.edu/ciao4.14/) softwares. In addition the python modules [numpy](http://www.numpy.org/), [astropy](http://www.astropy.org/), [h5py](https://www.h5py.org/), [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), and [pandas](https://pandas.pydata.org/) are required.
 
-The Chandra data reduction code has similar required installation of the [CIAO](https://cxc.cfa.harvard.edu/ciao4.14/), and the python modules [numpy](http://www.numpy.org/), [astropy](http://www.astropy.org/), and [h5py](https://www.h5py.org/).
+The Chandra data reduction code similarly requires installation of [CIAO](https://cxc.cfa.harvard.edu/ciao4.14/), and `numpy`, `astropy`, and `h5py`.
 
 ## Processing XMM-Newton Data
 
@@ -37,18 +37,18 @@ The list of observation IDs processed can be found in the `data` folder, in text
 
 We provide the code used for Chandra data processing in `ChandraReduction`.
 
-To use the code, first establish the directories where `CIAO` and `CALDB` are installed and the output files should be written in `source_dirs.sh`. Then use,
+To use the code, first establish the directories where `CIAO` and `CALDB` are installed and the output files should be written in `source_dirs.sh`. Then run
 
 ```
 bash perseus_process.sh
 ```
 
-for the data process of all observation IDs for Perseus and 
+to process all `Perseus` observations and 
 
 ```
 bash deepfield_process.sh
 ```
 
-for the data process of all observation IDs for Chandra Deep Field South (CDFS) and Chandra-COSMOS Legacy Survey (CCLS), which are saved in separate files.
+to process all observations of `Chandra Deep Field South (CDFS)` and `Chandra-COSMOS Legacy Survey (CCLS)`, which are saved in separate files.
 
-The list of observation IDs can be found in `data` folder, with same format described above where `<target>` is `PerseusChandra`, `CDFS`, and `CCLS`.
+The list of observation IDs can again be found in the `data` folder, where `<target>` now takes values `PerseusChandra`, `CDFS`, and `CCLS`.
