@@ -73,11 +73,6 @@ fi
 
 cd $deepfield_data/$obsid/repro
 
-# set observation-specific bad-pixel file
-# getting the name of the bad pixel file
-find_res=$(find . -type f -regex '.*_repro_bpix1.fits')
-bpix=${find_red#./}
-
 
 # getting filenames for the data process
 find_res=$(find . -type f -regex ".*_repro_evt2.fits")
