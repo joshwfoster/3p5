@@ -4,17 +4,17 @@
 cdirs=$(pwd)
 
 # CIAO code directory
-ciao_dir=/clusterfs/heptheory/yujinp/code/CIAO/ciao-4.14/
+ciao_dir=
 
 # CALDB directory for stowed background
-caldb_dir=/clusterfs/heptheory/yujinp/code/CIAO/ciao-4.14/CALDB/
+caldb_dir=
 
 # location for data downloaded and stored for Perseus observation
-perseus_data=/clusterfs/heptheory/yujinp/3p5_analysis/PerseusClean/obsID_new/
+perseus_data=
 
 # location for data downloaded and stored for Deep Field Survey observations
-cdfs_data=/clusterfs/heptheory/yujinp/3p5_analysis/DeepField/obsID_cdfs/
-ccls_data=/clusterfs/heptheory/yujinp/3p5_analysis/DeepField/obsID_ccls/
+cdfs_data=
+ccls_data=
 
 # directory for final data
-result_dir=/clusterfs/heptheory/yujinp/3p5_analysis/data/
+result_dir=
