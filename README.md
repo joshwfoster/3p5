@@ -17,15 +17,15 @@ That work re-analyzed six datasets previously suggested to show evidence for the
 
 The XMM-Newton data reduction code is a combination of bash and Python. The code requires installation of the [XMM-SAS](https://xmm-tools.cosmos.esa.int/external/xmm_user_support/documentation/sas_usg/USG/), [HEADAS](https://heasarc.nasa.gov/lheasoft/), and [CIAO](https://cxc.cfa.harvard.edu/ciao4.14/) softwares. In addition the python modules [numpy](http://www.numpy.org/), [astropy](http://www.astropy.org/), [h5py](https://www.h5py.org/), [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), and [pandas](https://pandas.pydata.org/) are required.
 
-The Chandra data reduction code similarly requires installation of [CIAO](https://cxc.cfa.harvard.edu/ciao4.14/), and `numpy`, `astropy`, and `h5py`.
+The Chandra data reduction code similarly requires installation of `CIAO`, and `numpy`, `astropy`, and `h5py`.
 
-The data analysis code requires `Jupyter` along with python modules `matplotlib`, `numpy`, `scipy`, `iminuit`, `h5py`, 
+The data analysis code requires [Jupyter](https://jupyter.org/) along with python modules [matplotlib](https://www.matplotlib.org/), `numpy`, [scipy](https://scipy.org/), [iminuit](https://iminuit.readthedocs.io/), and `h5py`.
 
 ## Processing XMM-Newton Data
 
 In [2309.03254](https://arxiv.org/abs/2309.03254) we process several XMM-Newton datasets. In `XMMReduction` we provide the code to reduce this data.
 
-To use the code, first establish the directories where the `SAS`, `HEADAS`, and `CIAO` tools are installed and the output data should be written in `source_dirs.sh`. Then to process all exposures associated with an observation with ID `obsID`, use
+To use the code, first establish the directories where the `XMM-SAS`, `HEADAS`, and `CIAO` tools are installed and the output data should be written in `source_dirs.sh`. Then to process all exposures associated with an observation with ID `obsID`, use
 
 ```
 ./dl2dat.sh $obsID $RunWavdetect
@@ -39,7 +39,7 @@ The list of observation IDs processed can be found in the `data` folder, in text
 
 We also process several Chandra datasets. We provide the code used for Chandra data processing in `ChandraReduction`.
 
-To use the code, first establish the directories where `CIAO` and `CALDB` are installed and the output files should be written in `source_dirs.sh`. Then run
+To use the code, first establish the directory where `CIAO` is installed and the output files should be written in `source_dirs.sh`. Then run
 
 ```
 bash perseus_process.sh
