@@ -32,7 +32,7 @@ In [2309.03254](https://arxiv.org/abs/2309.03254) we process several XMM-Newton 
 To use the code, first establish the directories where the `XMM-SAS`, `HEADAS`, and `CIAO` tools are installed and the output data should be written in `source_dirs.sh`. Then to process all exposures associated with an observation with ID `obsID`, use
 
 ```
-./dl2dat.sh $obsID $RunWavdetect
+./ProcessXMM.sh $obsID $RunWavdetect
 ```
 
 where `$RunWavdetect` is `0` or `1` depending on if the point source masking is done using the `CIAO` tool `wavdetect` or the `SAS` tool `cheese`. In our analyses we use `wavdetect` for all reductions except for that of M31. The code will then process the observation and output data in `h5py` format.
