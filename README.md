@@ -2,6 +2,7 @@
 **For analysis of X-Ray datasets in search of the 3.5 keV Line**
 
 [![arXiv](https://img.shields.io/badge/arXiv-2309.03254%20-green.svg)](https://arxiv.org/abs/2309.03254)
+![ObsSig](/SignificancePlot.pdf "Detection statistic by observation and energy ROI")
 
 3p5 is a repository containing the data reduction code, data analysis code, and data products used in [2309.03254](https://arxiv.org/abs/2309.03254), so that the results in that work are completely reproducible.
 That work re-analyzed six datasets previously suggested to show evidence for the 3.5 keV line, and found no robust evidence for the line in any of the datasets.
