@@ -67,4 +67,4 @@ We provide the relevant code and files used for the analysis of the Perseus data
 2. `2_Initial_Fit.ipynb` performs an initial fit of the model to the data, prior to any line dropping.
 3. `3_Component_Drop.ipynb` performs the line drop tests, then the continuum component drop tests, and saves the final model with only important components.
 4. `4_Make_Signal_Dictionary.ipynb` adds the putative signal line to the model created in the previous step.
-5. `5_Profiled_Analysis.ipynb` computes the profile likelihood as a function of the signal line flux, which is shown in Fig. 6 (above).
+5. `5_Profiled_Analysis.ipynb` computes the profiled likelihood as a function of the signal line flux, which is shown in Fig. 6 (above).
